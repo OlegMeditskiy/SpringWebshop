@@ -11,7 +11,9 @@
     width: 100%;
 }
 
+.card-price{
 
+}
 .login-block{
     padding: 25px;
     margin: 0 auto;
@@ -25,7 +27,7 @@
     font-weight: bold;
 }
 .login-form{
-    margin-top: 7   0px;
+    margin-top: 25px;
 }
 .signinButton{
     color: black;

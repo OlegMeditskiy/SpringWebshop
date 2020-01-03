@@ -31,12 +31,12 @@ public class MainController {
         return "main";
     }
 
-    @PostMapping("filter")
-    public String filter(@RequestParam String filter, Map<String, Object> model) {
+    @GetMapping("search")
+    public String search(@RequestParam String search, Map<String, Object> model) {
         Iterable<Product> products;
 
-        if (filter != null && !filter.isEmpty()) {
-            products = productRepo.findByTitle(filter);
+        if (search != null && !search.isEmpty()) {
+            products = productRepo.findByTitleContaining(search);
         } else {
             products = productRepo.findAll();
         }

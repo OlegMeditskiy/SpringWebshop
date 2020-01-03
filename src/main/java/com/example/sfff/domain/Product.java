@@ -15,10 +15,12 @@ public class Product {
     public Product() {
     }
 
-    public Product(String title, String description, User user) {
+    public Product(String category, String title, String description, int price, User user) {
         this.author = user;
         this.description = description;
         this.title = title;
+        this.price = price;
+        this.category = category;
     }
 
     public String getAuthorName(){
@@ -61,5 +63,23 @@ public class Product {
         this.title = tag;
     }
 
+    private int price;
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    private String category;
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }

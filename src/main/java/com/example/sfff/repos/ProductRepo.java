@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface ProductRepo extends CrudRepository<Product, Long> {
 
-    List<Product> findByTitle(String title);
-
+    List<Product> findByTitleContaining(String title);
 }
