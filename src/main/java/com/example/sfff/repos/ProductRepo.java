@@ -8,4 +8,6 @@ import java.util.List;
 public interface ProductRepo extends CrudRepository<Product, Long> {
 
     List<Product> findByTitleContaining(String title);
+    List<Product> findAllByOrderByIdDesc();
+    Product findById(Integer id);
 }

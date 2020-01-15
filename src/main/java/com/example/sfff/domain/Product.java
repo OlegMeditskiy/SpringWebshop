@@ -82,4 +82,14 @@ public class Product {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    private String filename;
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
 }

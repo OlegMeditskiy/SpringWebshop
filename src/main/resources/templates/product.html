@@ -1,0 +1,130 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/471586c02e.js" crossorigin="anonymous"></script>
+    <title>Vegan life</title>
+</head>
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/admin">Admin panel</a></li>
+            <li class="breadcrumb-item"><a href="/admin/user">Users</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Products</li>
+
+        </ol>
+    </nav>
+    <div style="margin-left: 50px; margin-right: 50px;">
+        <div>
+            <h1>Products</h1>
+        </div>
+        <div> <button class="btn cart" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Add new Product
+            </button>
+        </div>
+        <div class="collapse" id="collapseExample" style="margin-top: 20px; margin-bottom: 20px;">
+            <div class="card card-body">
+                <form method="post" th:action="@{/admin/product}" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="category">Category</label>
+
+                        <select name="category" class="form-control" id="category">
+                            <option th:each="categoryOpt : ${T(com.example.sfff.domain.Category).values()}"
+                                    th:value="${categoryOpt}" th:text="${categoryOpt.displayValue}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="file">File</label>
+                        <input type="file" class="form-control" id="file" name="file" />
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter Description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" pattern="^[ 0-9]+$" id="price" title="Numbers" name="price" placeholder="Enter price" />
+                    </div>
+
+
+                    <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                    <button class="btn cart" type="submit" >Add</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div>
+            <table id="example" class="table table-bordered" style="width:100%">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody >
+
+                    <tr th:each="product : ${products}">
+                        <td th:text="${product.id}" style="width: 20px;"></td>
+<!--                        <td style="width: 100px;"><img th:src="@{${'/images/products/'+product.id+'.jpg'}}" style="width: 100px; height: auto;" alt="..."></td>-->
+                        <td style="width: 100px;"><img th:if="${product?.filename}" th:src="@{${'/images/products/'+product.filename}}" style="width: 100px; height: auto;" alt="..."></td>
+                        <td th:text="${product.title}"></td>
+                        <td th:text="${product.description}"></td>
+                        <td th:text="${product.price}" style="width: 50px;"></td>
+                        <td><form method="delete" th:action="@{/admin/product}">
+                            <input type="hidden" th:text="${product.id}"></input>
+                            <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                            <button class="btn" type="submit"> Delete </button>
+                        </form></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
+
+    <footer>
+        <div class="f">
+            Copyright - Vegan Life - 2019
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

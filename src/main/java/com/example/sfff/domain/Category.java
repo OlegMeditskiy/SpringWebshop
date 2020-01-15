@@ -1,10 +1,13 @@
 package com.example.sfff.domain;
 
 public enum Category {
-    ice_cream("Ice cream"), chocolate("Chocolate");
+    dairy_free("Dairy-free"),
+    training("Traning"),
+    ice_cream("Ice cream"),
+    chocolate("Chocolate");
     private String displayValue;
 
-    Category(String displayValue) {
+    private Category(String displayValue) {
         this.displayValue = displayValue;
     }
     public String getDisplayValue(){

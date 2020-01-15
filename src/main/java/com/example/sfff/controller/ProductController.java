@@ -1,20 +1,23 @@
 package com.example.sfff.controller;
 
+import com.example.sfff.domain.CartProduct;
 import com.example.sfff.domain.Product;
 import com.example.sfff.domain.User;
 import com.example.sfff.repos.ProductRepo;
-import freemarker.ext.beans.BeansWrapper;
-import freemarker.template.TemplateHashModel;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/admin/product")
@@ -23,7 +26,8 @@ public class ProductController {
     @Autowired
     private ProductRepo productRepo;
 
-
+    @Value("${upload.path}")
+    private String uploadPath;
 
     @GetMapping
     public String product(Map<String, Object> model) {
@@ -34,6 +38,7 @@ public class ProductController {
         return "product";
     }
 
+
     @PostMapping
     public String add(
             @AuthenticationPrincipal User user,
@@ -41,8 +46,24 @@ public class ProductController {
             @RequestParam String title,
             @RequestParam String description,
             @RequestParam int price,
-            Map<String, Object> model) {
+            Map<String, Object> model,
+            @RequestParam("file") MultipartFile file) throws IOException {
         Product product = new Product(category, title, description, price, user);
+
+        if (file != null && !file.getOriginalFilename().isEmpty()) {
+            File uploadDir = new File(uploadPath);
+
+            if (!uploadDir.exists()) {
+                uploadDir.mkdir();
+            }
+
+            String uuidFile = UUID.randomUUID().toString();
+            String resultFilename = uuidFile + "." + file.getOriginalFilename();
+
+            file.transferTo(new File(uploadPath + "/" + resultFilename));
+
+           product.setFilename(resultFilename);
+        }
 
         productRepo.save(product);
 
@@ -52,4 +73,15 @@ public class ProductController {
 
         return "product";
     }
+
+    @GetMapping("/{cartProductId}")
+    public String delete(
+            @PathVariable Long cartProductId
+    ){
+
+
+        return "redirect:/admin/product";
+    }
+
+
 }
