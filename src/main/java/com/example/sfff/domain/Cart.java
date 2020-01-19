@@ -2,7 +2,6 @@ package com.example.sfff.domain;
 
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -51,12 +50,5 @@ public class Cart {
         this.user = user;
     }
 
-//    public Set<Product> getProducts() {
-//        return products;
-//    }
-//
-//    public void setProducts(Set<Product> products) {
-//        this.products = products;
-//    }
 
 }

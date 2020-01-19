@@ -1,6 +1,9 @@
 package com.example.sfff.domain;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Product {
@@ -15,28 +18,11 @@ public class Product {
     public Product() {
     }
 
-    public Product(String category, String title, String description, int price, User user) {
-        this.author = user;
+    public Product(String category, String title, String description, int price) {
         this.description = description;
         this.title = title;
         this.price = price;
         this.category = category;
-    }
-
-    public String getAuthorName(){
-        return author != null?author.getUsername():"<none>";
-    }
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private User author;
-
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
     }
 
     public void setId(Integer id) {

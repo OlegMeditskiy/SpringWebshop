@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 .head{
     height: 350px;
     justify-content: center;
@@ -99,7 +103,6 @@ footer{
     height: 50px;
     background-color: #f8f9fa;
 
-
 }
 .f{
     color: rgba(0,0,0,.5);
@@ -118,6 +121,20 @@ footer{
 .cart-item{
     margin: 10px;
     padding: 5px;
+}
+.order{
+    padding: 10px;
+}
+.columnName{
+    color: gray;
+    font-size: 15px;
+    font-weight: bold;
+}
+.main-content {
+    min-height: calc(100vh - 100px); /* Total viewport height - (height of navbar + height of footer) */
+}
+table.dataTable{
+    border-collapse: collapse !important;
 }
 
 @media only screen and (min-width: 990px)  {

@@ -30,8 +30,10 @@
             <li class="breadcrumb-item"><a href="/admin">Admin panel</a></li>
             <li class="breadcrumb-item active" aria-current="page">Users</li>
             <li class="breadcrumb-item"><a href="/admin/product">Products</a></li>
+            <li class="breadcrumb-item"><a href="/admin/order">Orders</a></li>
         </ol>
     </nav>
+<div class="main-content" style="margin-left: 50px; margin-right: 50px;">
     <div>
         <h1>Users</h1>
 
@@ -47,15 +49,16 @@
         </thead>
         <tbody>
 
-            <tr th:each="user : ${users}">
-                <td th:text="${user.username}"></td>
-                <td th:each="role : ${user.roles}">
-                    <p th:text="${role}"></p>
-                </td>
-                <td ><a th:text="Edit" th:href="@{'/admin/user/'+ ${user.id}}">edit</a></td>
-            </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.username}"></td>
+            <td th:each="role : ${#strings.setJoin(user.roles, ',')}">
+                <p th:text="${role}"></p>
+            </td>
+            <td ><a th:text="Edit" th:href="@{'/admin/user/'+ ${user.id}}">edit</a></td>
+        </tr>
         </tbody>
     </table>
+</div>
 
     <footer>
         <div class="f">

@@ -2,68 +2,107 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="555cf6d9-8390-4431-b7f3-715d77a2f4cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/CartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/CartProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/CartProductRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/CartRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/050dfd8f-2554-4da8-86ea-44c2f52864f3.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/1ee0b308-180e-4b30-a9e5-7fe0c5b689c6.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/2461941d-0f57-457e-80c4-3d23758332ef.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/3e6f0e99-19b6-499c-a930-94dcd92869de.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/63ed77b9-0b04-4aa2-a198-208894287f88.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/b721950c-0af7-459e-85bd-39fb0d7fd6b4.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/cd79f0bd-68ad-4fe2-ae8f-58ce81cc8e6e.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/ce6a2f9e-9410-4683-b9a1-24351b0d660d.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/cec78a99-3401-4d2c-b28b-a981c0197202.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/d26ddc73-b9dc-4e6d-ab71-e9d1f9d6c695.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/e43392e8-fef4-49f9-bf96-81bd361fd144.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/e93d056c-def7-4de9-82e3-a89757081d21.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/AdminOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/OrderProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/OrderProductRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/OrderRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/2c43615e-aa12-49ea-8d28-40e854080d91.Protein.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/498ed383-ae98-4841-b71c-93a7c0594907.Chocolate.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/5462e315-c046-44ce-b01b-2f71e2c2110b.Almond milk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/6291247e-badc-4125-a5ac-a10527453f58.Ice cream 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/6687bf31-ea98-4fe8-a860-fa5e41fdec10.Ice cream 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/70b9bde2-e83b-40d9-843a-1e8c20633582.Kokos milk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/order.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/orderList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/b66b13ad-00c6-4cbd-a825-cff737df23f3.Kokos milk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/bc2c48b4-b1cd-486b-91e1-4dfa2d37672e.Kokos milk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/cd78bc63-fa79-43d7-9a77-04e9e608d878.Kokos milk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/cdc83833-39b7-451b-a624-3ecaeefd3cf7.Kokos milk.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/config/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/CartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Cart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/CartProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/CartProductRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/CartRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/CartRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/ProductRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/greeting.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/common.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/login.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/productEdit.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/productEdit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userEdit.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userEdit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userList.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/config/MvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/config/MvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/050dfd8f-2554-4da8-86ea-44c2f52864f3.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/05eab843-d700-4fed-a933-45a94e7c2c14.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/1ee0b308-180e-4b30-a9e5-7fe0c5b689c6.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/2461941d-0f57-457e-80c4-3d23758332ef.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/3e6f0e99-19b6-499c-a930-94dcd92869de.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/63ed77b9-0b04-4aa2-a198-208894287f88.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/64645823-531f-4a59-ac49-1fd030f9b3be.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/b721950c-0af7-459e-85bd-39fb0d7fd6b4.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/cd79f0bd-68ad-4fe2-ae8f-58ce81cc8e6e.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/ce6a2f9e-9410-4683-b9a1-24351b0d660d.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/cec78a99-3401-4d2c-b28b-a981c0197202.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/d26ddc73-b9dc-4e6d-ab71-e9d1f9d6c695.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/df811da8-98ad-44c7-b364-51dc1775f8ba.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/e43392e8-fef4-49f9-bf96-81bd361fd144.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/products/e93d056c-def7-4de9-82e3-a89757081d21.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/productEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/productEdit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userEdit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/CartController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/RegistrationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Category.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Product.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/CartProductRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/CartProductRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/CartRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/CartRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/ProductRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/ProductRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/greeting.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/parts/common.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/parts/login.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/product.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/productEdit.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/registration.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/userEdit.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/userList.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/050dfd8f-2554-4da8-86ea-44c2f52864f3.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/05eab843-d700-4fed-a933-45a94e7c2c14.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/1ee0b308-180e-4b30-a9e5-7fe0c5b689c6.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/2461941d-0f57-457e-80c4-3d23758332ef.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/3e6f0e99-19b6-499c-a930-94dcd92869de.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/63ed77b9-0b04-4aa2-a198-208894287f88.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/64645823-531f-4a59-ac49-1fd030f9b3be.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/b721950c-0af7-459e-85bd-39fb0d7fd6b4.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/cd79f0bd-68ad-4fe2-ae8f-58ce81cc8e6e.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/ce6a2f9e-9410-4683-b9a1-24351b0d660d.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/cec78a99-3401-4d2c-b28b-a981c0197202.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/d26ddc73-b9dc-4e6d-ab71-e9d1f9d6c695.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/df811da8-98ad-44c7-b364-51dc1775f8ba.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/e43392e8-fef4-49f9-bf96-81bd361fd144.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/products/e93d056c-def7-4de9-82e3-a89757081d21.1de04ea6-0a03-4830-9cd5-96588b19d1cf.liliia2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/greeting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/productEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/productEdit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userEdit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +116,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="HTML File" />
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -197,7 +236,8 @@
       <workItem from="1578212971771" duration="299000" />
       <workItem from="1578213301639" duration="24460000" />
       <workItem from="1578301767727" duration="1271000" />
-      <workItem from="1578748692432" duration="65171000" />
+      <workItem from="1578748692432" duration="68856000" />
+      <workItem from="1579161578425" duration="45455000" />
     </task>
     <servers />
   </component>
@@ -208,10 +248,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1579023306235">
+    <state x="765" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1579353250934">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1579023306235" />
+    <state x="765" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1579353250934" />
     <state x="179" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578213221589">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -232,38 +272,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="957" y="178" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1577525290051" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1579097614986">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1579409355989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579097614986" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1579097614986">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579409355989" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1579409355989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579097614986" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1579097614986">
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579409355989" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1579409355989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579097614986" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1579097614986">
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579409355989" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1579409355989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579097614986" />
-    <state width="1877" height="275" key="GridCell.Tab.1.bottom" timestamp="1579097614987">
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579409355989" />
+    <state width="1877" height="275" key="GridCell.Tab.1.bottom" timestamp="1579409355989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579097614987" />
-    <state width="1877" height="275" key="GridCell.Tab.1.center" timestamp="1579097614986">
+    <state width="1877" height="275" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579409355989" />
+    <state width="1877" height="275" key="GridCell.Tab.1.center" timestamp="1579409355989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579097614986" />
-    <state width="1877" height="275" key="GridCell.Tab.1.left" timestamp="1579097614986">
+    <state width="1877" height="275" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579409355989" />
+    <state width="1877" height="275" key="GridCell.Tab.1.left" timestamp="1579409355989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579097614986" />
-    <state width="1877" height="275" key="GridCell.Tab.1.right" timestamp="1579097614987">
+    <state width="1877" height="275" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579409355989" />
+    <state width="1877" height="275" key="GridCell.Tab.1.right" timestamp="1579409355989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579097614987" />
+    <state width="1877" height="275" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579409355989" />
     <state width="1877" height="345" key="GridCell.Tab.2.bottom" timestamp="1577710784202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -285,10 +325,10 @@
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1440.856@0.0.1920.1040" timestamp="1577522487029" />
     <state x="794" y="45" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577525685134" />
-    <state x="951" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1578748698834">
+    <state x="951" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1579161581557">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="951" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578748698834" />
+    <state x="951" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579161581557" />
     <state x="148" y="244" key="run.anything.popup" timestamp="1578045398420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

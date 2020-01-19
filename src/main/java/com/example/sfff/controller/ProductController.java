@@ -25,6 +25,7 @@ import java.util.UUID;
 public class ProductController {
     @Autowired
     private ProductRepo productRepo;
+    
 
     @Value("${upload.path}")
     private String uploadPath;
@@ -37,18 +38,25 @@ public class ProductController {
 
         return "product";
     }
+    @GetMapping("/delete")
+    public String delete(
+            @RequestParam int productId
+    ){
+        Product product = productRepo.findById(productId);
+            productRepo.delete(product);
+        return "redirect:/admin/product";
+    }
 
 
     @PostMapping
     public String add(
-            @AuthenticationPrincipal User user,
             @RequestParam String category,
             @RequestParam String title,
             @RequestParam String description,
             @RequestParam int price,
             Map<String, Object> model,
             @RequestParam("file") MultipartFile file) throws IOException {
-        Product product = new Product(category, title, description, price, user);
+        Product product = new Product(category, title, description, price);
 
         if (file != null && !file.getOriginalFilename().isEmpty()) {
             File uploadDir = new File(uploadPath);

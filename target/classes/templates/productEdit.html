@@ -24,15 +24,17 @@
     <title>Vegan life</title>
 </head>
 <body>
+<div class="main-content">
     User editor
 
     <form action="/product" method="post">
         <input type="text" name="title" value="${product.title}">
         <input type="text" name="title" value="${product.description}">
         <input type="hidden" value="${product.id}" name="userId">
-        <input type="hidden" value="${_csrf.token}" name="_csrf">
         <button type="submit">Save</button>
     </form>
+
+</div>
 
     <footer>
         <div class="f">

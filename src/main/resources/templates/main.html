@@ -1,6 +1,7 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org" lang="en">
+      xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -41,21 +42,17 @@
                     <button  id="button-search"class="searchButton btn btn-outline-secondary" type="submit">Search</button>
                 </div>
             </div>
-             <input type="hidden" name="_csrf" value="${_csrf.token}" />
             </form>
         </div>
         <div class="col">
 
 
             <div class="btn-group float-right" role="group" aria-label="Basic example">
-                <button class="btn cart"><i class="far fa-user-circle"></i></button>
-
+                <a href="/admin"><button class="btn cart" th:if="${user.roles.contains(T(com.example.sfff.domain.Role).ADMIN)}">Admin panel</button></a>
+                <a href="/order"><button class="btn cart"><i class="far fa-user-circle"></i></button></a>
                 <form th:action="@{/logout}" method="post">
-                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-
                     <button type="submit" class="btn cart"><i class="fas fa-sign-out-alt"></i></button>
                 </form>
-
                 <a href="/cart"><button class="btn cart"><i class="fas fa-shopping-cart"></i></button></a>
 
             </div>
@@ -73,66 +70,41 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav  mr-auto">
             <li class="nav-item">
-                <a class="menu nav-link" href="#">All products</a>
+                <a class="menu nav-link" href="/">All products</a>
             </li>
-            <li class="nav-item">
-                <a class="menu nav-link" href="#">Chocolate</a>
-            </li>
-            <li class="nav-item">
-                <a class="menu nav-link" href="#">Dairy-free</a>
-            </li>
-            <li class="nav-item">
-                <a class="menu nav-link" href="#">Ice cream</a>
-            </li>
-            <li class="nav-item">
-                <a class="menu nav-link" href="#">Traning</a>
+
+            <li th:each="categoryOpt : ${T(com.example.sfff.domain.Category).values()}">
+                <a class="menu nav-link" th:href="@{/category(c=${categoryOpt.displayValue})}" th:text="${categoryOpt.displayValue}"></a>
             </li>
         </ul>
-
     </div>
 </nav>
-<div class="last"> Last products</div>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
+<div class="main-content">
+    <div class="last" th:text="${whatIsIt}"></div>
+    <div class="container">
+        <div class="row">
+            <div th:each="product : ${products}" class="project col-md-6 col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img  th:if="${product?.filename}" th:src="@{${'/images/products/'+product.filename}}"   class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title" th:text="${product.title}"></p>
+                        <p class="card-text" th:text="${product.description}"></p>
+                        <h5 class="card-price" th:text="${product.price} + ' sek'"></h5>
+                        <!--                   <button class="btn cart" data-toggle="modal" data-target="#exampleModalCenter">Add to basket</button>-->
+                        <form th:action="@{/}" method="post">
+                            <input type="hidden" th:value="${product.id}" th:name="id">
+                            <button class="btn cart">Add to basket</button>
+                        </form>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div th:each="product : ${products}" class="project col-md-6 col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <img  th:if="${product?.filename}" th:src="@{${'/images/products/'+product.filename}}"   class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-title" th:text="${product.title}"></p>
-                    <p class="card-text" th:text="${product.description}"></p>
-                    <h5 class="card-price" th:text="${product.price} + ' sek'"></h5>
-<!--                   <button class="btn cart" data-toggle="modal" data-target="#exampleModalCenter">Add to basket</button>-->
-                    <form th:action="@{/}" method="post">
-                        <input type="hidden" th:value="${product.id}" th:name="id">
-                        <button class="btn cart">Add to basket</button>
-                    </form>
-
+                    </div>
                 </div>
             </div>
+
         </div>
 
     </div>
-
 </div>
+
 
 <footer>
     <div class="f">

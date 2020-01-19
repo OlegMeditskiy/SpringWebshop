@@ -1,13 +1,9 @@
 package com.example.sfff.controller;
 
-import com.example.sfff.domain.Cart;
-import com.example.sfff.domain.CartProduct;
-import com.example.sfff.domain.Product;
-import com.example.sfff.domain.User;
+import com.example.sfff.domain.*;
 import com.example.sfff.repos.CartProductRepo;
 import com.example.sfff.repos.CartRepo;
 import com.example.sfff.repos.ProductRepo;
-import com.example.sfff.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -15,7 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 
 @Controller
@@ -32,18 +29,31 @@ public class MainController {
 
 
 
-
     @GetMapping("/")
-    public String main(Map<String, Object> model) {
+    public String main(@AuthenticationPrincipal User user,Map<String, Object> model) {
         Iterable<Product> products = productRepo.findAllByOrderByIdDesc();
-
         model.put("products", products);
-
+        model.put("whatIsIt","All products");
+        model.put("user",user);
         return "main";
     }
 
+    @GetMapping("category")
+    public String category(@AuthenticationPrincipal User user,@RequestParam String c,Map<String, Object> model){
+            for (Category categoryEnum: Category.values()){
+                if (c.equals(categoryEnum.getDisplayValue())) {
+                    Iterable<Product> products = productRepo.findByCategory(categoryEnum.getDisplayValue());
+                    model.put("products",products);
+                    model.put("whatIsIt",c);
+                    model.put("user",user);
+                }
+        }
+        return "main";
+    }
+
+
     @GetMapping("search")
-    public String search(@RequestParam String search, Map<String, Object> model) {
+    public String search(@AuthenticationPrincipal User user,@RequestParam String search, Map<String, Object> model) {
         Iterable<Product> products;
 
         if (search != null && !search.isEmpty()) {
@@ -53,7 +63,7 @@ public class MainController {
         }
 
         model.put("products", products);
-
+        model.put("user",user);
         return "main";
     }
 

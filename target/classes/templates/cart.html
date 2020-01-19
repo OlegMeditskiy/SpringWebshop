@@ -25,7 +25,7 @@
     <title>Vegan life</title>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid main-content">
     <div class="row align-items-center">
         <div class="logo col-lg-3">
             <a href="/"><img id="logo" src="/images/logo.jpg" alt=""></a>
@@ -41,22 +41,20 @@
                         <button  id="button-search"class="searchButton btn btn-outline-secondary" type="submit">Search</button>
                     </div>
                 </div>
-                <input type="hidden" name="_csrf" value="${_csrf.token}" />
             </form>
         </div>
         <div class="col">
 
 
             <div class="btn-group float-right" role="group" aria-label="Basic example">
-                <button class="btn cart"><i class="far fa-user-circle"></i></button>
-
+                <a href="/admin"><button class="btn cart" th:if="${user.roles.contains(T(com.example.sfff.domain.Role).ADMIN)}">Admin panel</button></a>
+                <a href="/order"><button class="btn cart"><i class="far fa-user-circle"></i></button></a>
                 <form th:action="@{/logout}" method="post">
-                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 
                     <button type="submit" class="btn cart"><i class="fas fa-sign-out-alt"></i></button>
                 </form>
 
-                <button class="btn cart"><i class="fas fa-shopping-cart"></i></button>
+                <a href="/cart"><button class="btn cart"><i class="fas fa-shopping-cart"></i></button></a>
 
             </div>
 
@@ -73,52 +71,55 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav  mr-auto">
             <li class="nav-item">
-                <a class="menu nav-link" href="#">All products</a>
+                <a class="menu nav-link" href="/">All products</a>
             </li>
-            <li class="nav-item">
-                <a class="menu nav-link" href="#">Chocolate</a>
-            </li>
-            <li class="nav-item">
-                <a class="menu nav-link" href="#">Dairy-free</a>
-            </li>
-            <li class="nav-item">
-                <a class="menu nav-link" href="#">Ice cream</a>
-            </li>
-            <li class="nav-item">
-                <a class="menu nav-link" href="#">Traning</a>
+
+            <li th:each="categoryOpt : ${T(com.example.sfff.domain.Category).values()}">
+                <a class="menu nav-link" th:href="@{/category(c=${categoryOpt.displayValue})}" th:text="${categoryOpt.displayValue}"></a>
             </li>
         </ul>
-
     </div>
 </nav>
 <div class="last"> Cart </div>
 
-<div class="container">
+<div class="container" th:if="${products}">
     <div class="row cart-item border border-success" th:each="product : ${products}">
-        <div class="col-3">
+        <div class="col-md-6 col-lg-3">
             <img  th:if="${product.getProduct()?.filename}" th:src="@{${'/images/products/'+product.getProduct().filename}}" style="height: 100px; width: auto;">
         </div>
-        <div class="col-3" th:text="${product.getProduct().title}">
+        <div class="col-md-6 col-lg-3" th:text="${product.getProduct().title}">
         </div>
-        <div class="col-2" th:text="${product.getNumbers() + 'st'}">
+        <div class="col-md-6 col-lg-2" th:text="${product.getNumbers() + ' st'}">
         </div>
-        <div class="col-2" th:text="${product.getProduct().price*product.getNumbers()} + ' sek'">
+        <div class="col-md-6 col-lg-2" th:text="${product.getProduct().price*product.getNumbers()} + ' sek'">
         </div>
-        <div class="col-2">
-            <form th:action="@{'/cart/'+${product.getId()}}" method="delete">
-                <input type="hidden" th:value="${product.getId()}" name="cartProductId">
-                <button class="btn cart" type="submit">Delete</button>
-            </form>
+        <div class="col-md-6 col-lg-2">
+            <div class="btn-group float-right" role="group" aria-label="Basic example">
+                <form th:action="@{'/cart/addQuantity/'+${product.getId()}}" method="get">
+                    <button class="btn cart" type="submit"><i class="fas fa-plus"></i></button>
+                </form>
+                <form th:action="@{'/cart/deleteQuantity/'+${product.getId()}}" method="get">
+                    <input type="hidden" th:value="${product.getId()}" name="cartProductId">
+                    <button class="btn cart" type="submit"><i class="fas fa-minus"></i></button>
+                </form>
+                <form th:action="@{'/cart/delete/'+${product.getId()}}" method="get">
+                    <input type="hidden" th:value="${product.getId()}" name="cartProductId">
+                    <button class="btn btn-danger" id="delete" type="submit" style="margin: 5px;"><i class="fas fa-trash-alt"></i></button>
+                </form>
+
+            </div>
+
         </div>
 
     </div>
-    <div class="row" th:text="'Total sum: '+${summ} + ' sek'">
+    <div class="row" th:text="'Total sum: '+${sum} + ' sek'">
 
     </div>
     <div class="row" >
-<!--        <form th:action="@{/cart}" method="delete">-->
+        <form th:action="@{/order}" method="post">
+            <input type="hidden" value="kvistbrogatan 22" name="address">
             <button class="btn cart" type="submit">Checkout</button>
-<!--        </form>-->
+        </form>
 
     </div>
 
@@ -131,6 +132,9 @@
 
 </footer>
 
+<script>
+
+</script>
 
 </body>
 </html>

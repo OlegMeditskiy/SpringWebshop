@@ -32,14 +32,15 @@
             <li class="breadcrumb-item active" aria-current="page">Admin panel</li>
             <li class="breadcrumb-item"><a href="/admin/user">Users</a></li>
             <li class="breadcrumb-item"><a href="/admin/product">Products</a></li>
+            <li class="breadcrumb-item"><a href="/admin/order">Orders</a></li>
         </ol>
     </nav>
-    <div>
+    <div class="main-content" style="margin-left: 50px; margin-right: 50px;">
+
         <div class="btn-group" role="group" aria-label="Basic example">
 
             <a href="/"><button class="btn cart"><i class="fas fa-home"></i></button></a>
             <form th:action="@{/logout}" method="post">
-                <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 
                 <button type="submit" class="btn cart"><i class="fas fa-sign-out-alt"></i></button>
             </form>

@@ -25,42 +25,44 @@
     <title>Vegan life</title>
 </head>
 <body>
-<div class="containter">
-    <div class="row head align-items-center">
-        <div class="logo col-md-4">
-            <img src="/images/logo.jpg" class="mx-auto d-block" alt="">
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row login">
-        <div class="login-col col-xs-12">
-            <div class="login-block">
-                <h1>Register</h1>
-                <div th:each="user : ${userExists} ">
-                    <p th:text="${user}"></p>
-                </div>
-                <form class="login-form" th:action="@{/registration}" method="post">
-                    <div class="form-group">
-                        <label for="login">Username</label>
-                        <input type="text" name="username" class="form-control" id="login" placeholder="Enter username">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
-                    </div>
-                    <div class="text-right">
-                        <button type="submit" class="signinButton btn" value="Sign in">Sign in</button>
-                    </div>
-                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                </form>
-
+<div class="main-content">
+    <div class="containter">
+        <div class="row head align-items-center">
+            <div class="logo col-md-4">
+                <img src="/images/logo.jpg" class="mx-auto d-block" alt="">
             </div>
         </div>
     </div>
-    <div class="row register">
-        <div class="col register-col"><a href="/login">Back to log in</a></div>
+    <div class="container">
+        <div class="row login">
+            <div class="login-col col-xs-12">
+                <div class="login-block">
+                    <h1>Register</h1>
+                    <div th:each="user : ${userExists} ">
+                        <p th:text="${user}"></p>
+                    </div>
+                    <form class="login-form" th:action="@{/registration}" method="post">
+                        <div class="form-group">
+                            <label for="login">Username</label>
+                            <input type="text" name="username" class="form-control" id="login" placeholder="Enter username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" class="signinButton btn" value="Sign in">Sign in</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="row register">
+            <div class="col register-col"><a href="/login">Back to log in</a></div>
+        </div>
     </div>
 </div>
 
