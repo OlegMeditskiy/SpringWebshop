@@ -1,6 +1,7 @@
 package com.example.sfff.controller;
 
 import com.example.sfff.domain.CartProduct;
+import com.example.sfff.domain.Category;
 import com.example.sfff.domain.Product;
 import com.example.sfff.domain.User;
 import com.example.sfff.repos.ProductRepo;
@@ -15,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
@@ -25,7 +27,7 @@ import java.util.UUID;
 public class ProductController {
     @Autowired
     private ProductRepo productRepo;
-    
+
 
     @Value("${upload.path}")
     private String uploadPath;
@@ -43,7 +45,7 @@ public class ProductController {
             @RequestParam int productId
     ){
         Product product = productRepo.findById(productId);
-            productRepo.delete(product);
+        productRepo.delete(product);
         return "redirect:/admin/product";
     }
 
@@ -70,7 +72,7 @@ public class ProductController {
 
             file.transferTo(new File(uploadPath + "/" + resultFilename));
 
-           product.setFilename(resultFilename);
+            product.setFilename(resultFilename);
         }
 
         productRepo.save(product);

@@ -100,4 +100,8 @@ public class User implements UserDetails {
 
     public void setCart() {
     }
+
+    public boolean isAdmin(){
+        return roles.contains(Role.ADMIN);
+    }
 }

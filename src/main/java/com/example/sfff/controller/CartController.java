@@ -2,6 +2,7 @@ package com.example.sfff.controller;
 
 import com.example.sfff.domain.Cart;
 import com.example.sfff.domain.CartProduct;
+import com.example.sfff.domain.Category;
 import com.example.sfff.domain.User;
 import com.example.sfff.repos.CartProductRepo;
 import com.example.sfff.repos.CartRepo;
@@ -23,7 +24,7 @@ public class CartController {
 
     @GetMapping("/cart")
     public String main(@AuthenticationPrincipal User user,Map<String, Object> model) {
-        Cart cart = cartRepo.findByUserId(user.getId());
+        Cart cart = user.getCart();
         List<CartProduct> products = cartProductRepo.findByCartOrderById(cart);
         int sum = 0;
         if (!products.isEmpty()){
@@ -40,7 +41,7 @@ public class CartController {
             model.put("sum",sum);
         }
         model.put("user",user);
-
+        model.put("categories", Category.values());
         return "cart";
     }
 
@@ -67,8 +68,8 @@ public class CartController {
     ){
         Optional<CartProduct> cartProduct = cartProductRepo.findById(cartProductId);
         CartProduct cp = cartProduct.get();
-            cp.setNumbers(cp.getNumbers()+1);
-            cartProductRepo.save(cp);
+        cp.setNumbers(cp.getNumbers()+1);
+        cartProductRepo.save(cp);
 
         return "redirect:/cart";
     }
@@ -78,8 +79,8 @@ public class CartController {
     ){
         Optional<CartProduct> cartProduct = cartProductRepo.findById(cartProductId);
         CartProduct cp = cartProduct.get();
-            cartProductRepo.delete(cp);
-            return "redirect:/cart";
+        cartProductRepo.delete(cp);
+        return "redirect:/cart";
 
     }
 
