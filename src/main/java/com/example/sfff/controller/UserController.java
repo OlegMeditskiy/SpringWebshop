@@ -1,7 +1,11 @@
 package com.example.sfff.controller;
 
+import com.example.sfff.domain.Cart;
+import com.example.sfff.domain.CartProduct;
 import com.example.sfff.domain.Role;
 import com.example.sfff.domain.User;
+import com.example.sfff.repos.CartProductRepo;
+import com.example.sfff.repos.CartRepo;
 import com.example.sfff.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -9,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
@@ -20,6 +25,12 @@ import java.util.stream.Collectors;
 public class UserController {
     @Autowired
     private UserRepo userRepo;
+
+    @Autowired
+    private CartRepo cartRepo;
+
+    @Autowired
+    private CartProductRepo cartProductRepo;
 
     @GetMapping
     public String userList(Model model) {
@@ -35,6 +46,18 @@ public class UserController {
 
         return "userEdit";
     }
+    @GetMapping("/delete/{user}")
+    @Transactional
+    public String delete(@PathVariable User user) {
+        System.out.println(user);
+        Cart cart = cartRepo.findByUserId(user.getId());
+        cartProductRepo.deleteAllByCartId(cart.getId());
+        cartRepo.delete(cart);
+        user.getRoles().clear();
+        userRepo.delete(user);
+        return "redirect:/admin/user";
+    }
+
 
     @PostMapping
     public String userSave(

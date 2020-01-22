@@ -1,15 +1,12 @@
 package com.example.sfff.controller;
 
-import com.example.sfff.domain.Order;
-import com.example.sfff.domain.OrderProduct;
-import com.example.sfff.domain.Product;
+import com.example.sfff.domain.*;
 import com.example.sfff.repos.OrderProductRepo;
 import com.example.sfff.repos.OrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -35,17 +32,24 @@ public class AdminOrderController {
         return "orderList";
     }
 
-    @GetMapping("/delete")
-    @Transactional
-    public String delete(
-            @RequestParam Long orderId
-    ){
-        Optional<Order> findOrder = orderRepo.findById(orderId);
-        Order order = findOrder.get();
-        List<OrderProduct> products = orderProductRepo.findByOrderId(orderId);
-        orderProductRepo.deleteAllByOrderId(orderId);
-        System.out.println(products);
-        orderRepo.delete(order);
+    @GetMapping("{order}")
+    public String orderEditForm(@PathVariable Order order, Model model) {
+        model.addAttribute("order", order);
+        model.addAttribute("orderStatuses",order.getCategoryExcept(order.getOrderStatus()));
+
+        return "orderEdit";
+    }
+
+    @PostMapping
+    public String orderSave(
+            @RequestParam String address,
+            @RequestParam OrderStatus orderStatus,
+            @RequestParam("orderId") Order order
+            ){
+        order.setUserAddress(address);
+        order.setOrderStatus(orderStatus);
+        orderRepo.save(order);
+
         return "redirect:/admin/order";
     }
 

@@ -48,8 +48,8 @@
                         <label for="category">Category</label>
 
                         <select name="category" class="form-control" id="category">
-                            <option th:each="categoryOpt : ${T(com.example.sfff.domain.Category).values()}"
-                                    th:value="${categoryOpt.displayValue}" th:text="${categoryOpt.displayValue}"></option>
+                            <option th:each="categoryOpt : ${categories}"
+                                    th:value="${categoryOpt}" th:text="${categoryOpt.displayValue}"></option>
                         </select>
                     </div>
                     <div class="form-group">

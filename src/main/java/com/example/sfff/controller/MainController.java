@@ -42,12 +42,12 @@ public class MainController {
     }
 
     @GetMapping("category")
-    public String category(@AuthenticationPrincipal User user,@RequestParam String c,Map<String, Object> model){
+    public String category(@AuthenticationPrincipal User user,@RequestParam int category,Map<String, Object> model){
         for (Category categoryEnum: Category.values()){
-            if (c.equals(categoryEnum.getDisplayValue())) {
-                Iterable<Product> products = productRepo.findByCategory(categoryEnum.getDisplayValue());
+            if (category==categoryEnum.ordinal()) {
+                Iterable<Product> products = productRepo.findByCategory(categoryEnum);
                 model.put("products",products);
-                model.put("whatIsIt",c);
+                model.put("whatIsIt",categoryEnum.getDisplayValue());
                 model.put("user",user);
             }
         }
@@ -76,33 +76,46 @@ public class MainController {
     @PostMapping
     public String addToCart(
             @AuthenticationPrincipal User user,
-            @RequestParam Integer id){
+            @RequestParam int productId,
+            @RequestParam int quantity){
         Cart cart = cartRepo.findByUserId(user.getId());
-        Product product = productRepo.findById(id);
-        List<CartProduct> cartProduct = cartProductRepo.findByProductId(id);
-        System.out.println(cartProduct);
-        if (cartProduct.isEmpty()){
-            addProductToCart(product,cart);
-        }
-        else{
-            addQuantityToProductInCart(cartProduct.get(0));
-            cartProductRepo.save(cartProduct.get(0));
-        }
-
+        Product product = productRepo.findById(productId);
+        List<CartProduct> cartProducts = cartProductRepo.findByCartId(cart.getId());
+            CartProduct cartProduct = getCartProduct(cartProducts,productId);
+            if(cartProduct!=null){
+                addQuantityToProductInCart(cartProduct,quantity);
+            }
+            else {
+                addProductToCart(product,cart,quantity);
+            }
         return "redirect:/";
     }
 
 
 
-    public void addProductToCart(Product product, Cart cart){
+    public void addProductToCart(Product product, Cart cart, int quantity){
         CartProduct cp = new CartProduct();
         cp.setCart(cart);
         cp.setProduct(product);
+        cp.setQuantity(quantity);
         cartProductRepo.save(cp);
     }
 
-    public void addQuantityToProductInCart(CartProduct cartProduct){
-        cartProduct.setNumbers(cartProduct.getNumbers()+1);
+    public void addQuantityToProductInCart(CartProduct cartProduct, int quantity){
+        cartProduct.setQuantity(cartProduct.getQuantity()+quantity);
+        cartProductRepo.save(cartProduct);
     }
+
+    public CartProduct getCartProduct(List<CartProduct> cartProducts, int id) {
+        CartProduct cartProduct = null;
+        for (CartProduct cartProduct1 : cartProducts) {
+            if (cartProduct1.getProduct().getId() == id) {
+                cartProduct = cartProduct1;
+                break;
+            }
+        }
+        return cartProduct;
+    }
+
 
 }

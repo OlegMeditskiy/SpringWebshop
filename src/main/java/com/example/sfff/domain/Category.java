@@ -1,5 +1,8 @@
 package com.example.sfff.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum Category {
     milk("Milk"),
     training("Training"),
@@ -13,4 +16,6 @@ public enum Category {
     public String getDisplayValue(){
         return  displayValue;
     }
+
+
 }

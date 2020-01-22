@@ -37,74 +37,72 @@
     <div>
         <h1>Orders</h1>
     </div>
-<!--    <div> <button class="btn cart" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">-->
-<!--        Add new Product-->
-<!--    </button>-->
-<!--    </div>-->
-<!--    <div class="collapse" id="collapseExample" style="margin-top: 20px; margin-bottom: 20px;">-->
-<!--        <div class="card card-body">-->
-<!--            <form method="post" th:action="@{/admin/product}" enctype="multipart/form-data">-->
-<!--                <div class="form-group">-->
-<!--                    <label for="category">Category</label>-->
+    <div class="container order" th:each="order : ${orders}">
+        <div class="row order border border-success" data-toggle="collapse" th:href="'#collapse'+${order.getId()}" aria-expanded="false" aria-controls="collapseExample">
+            <div class="col" align="center">
+                <div class="columnName" th:text="ORDER" ></div>
+                <div th:text="${order.getId()}"></div>
+            </div>
+            <div class="col" align="center">
+                <div class="columnName" th:text="STATUS"></div>
+                <div th:text="${order.getOrderStatus().getDisplayValue()}"></div>
+            </div>
+            <div class="col" align="center">
+                <div class="columnName" th:text="SUM"></div>
+                <div th:text="${order.getTotalSum()}+ ' SEK'"></div>
+            </div>
+            <div class="col" align="center">
+                <div class="columnName" th:text="Edit"></div>
+                <div><a th:text="Edit" th:href="@{'/admin/order/'+ ${order.id}}"></a> </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row cart-item collapse" th:each="product: ${order.getSortedOrderProducts()}" th:id="'collapse'+${order.getId()}">
+                <div class="col-md-6 col-lg-3">
+                    <img  th:if="${product.getProduct()?.filename}" th:src="@{${'/images/products/'+product.getProduct().filename}}" style="height: 100px; width: auto;">
+                </div>
+                <div class="col-md-6 col-lg-5" >
+                    <div class="columnName" th:text="Title"></div>
+                    <div th:text="${product.getProduct().title}"></div>
+                </div>
+                <div class="col-md-6 col-lg-2" >
+                    <div class="columnName" th:text="Quantity"></div>
+                    <div th:text="${product.getQuantity() + ' st'}"></div>
+                </div>
+                <div class="col-md-6 col-lg-2" >
+                    <div class="columnName" th:text="Price"></div>
+                    <div th:text="${product.getProduct().price*product.getQuantity()} + ' sek'"></div>
+                </div>
+            </div>
+        </div>
 
-<!--                    <select name="category" class="form-control" id="category">-->
-<!--                        <option th:each="categoryOpt : ${T(com.example.sfff.domain.Category).values()}"-->
-<!--                                th:value="${categoryOpt.displayValue}" th:text="${categoryOpt.displayValue}"></option>-->
-<!--                    </select>-->
-<!--                </div>-->
-<!--                <div class="form-group">-->
-<!--                    <label for="file">File</label>-->
-<!--                    <input type="file" class="form-control" id="file" name="file" />-->
-<!--                </div>-->
-<!--                <div class="form-group">-->
-<!--                    <label for="title">Title</label>-->
-<!--                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" />-->
-<!--                </div>-->
 
-<!--                <div class="form-group">-->
-<!--                    <label for="description">Description</label>-->
-<!--                    <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter Description"></textarea>-->
-<!--                </div>-->
-<!--                <div class="form-group">-->
-<!--                    <label for="price">Price</label>-->
-<!--                    <input type="number" class="form-control" pattern="^[ 0-9]+$" id="price" title="Numbers" name="price" placeholder="Enter price" />-->
-<!--                </div>-->
-
-<!--                <button class="btn cart" type="submit" >Add</button>-->
-<!--            </form>-->
-<!--        </div>-->
-<!--    </div>-->
-
-
-
-    <div>
-        <table id="myTable" class="table table-bordered" style="width:100%">
-            <thead>
-            <tr>
-                <th>id</th>
-                <th>user</th>
-                <th>Order address</th>
-                <th>Order status</th>
-                <th>Sum</th>
-                <th>Delete</th>
-
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="order : ${orders}">
-                <td th:text="${order.id}" style="width: 20px;"></td>
-                <td th:text="${order.user.getId()}"></td>
-                <td th:text="${order.userAddress}"></td>
-                <td th:text="${order.orderStatus.getDisplayValue()}"></td>
-                <td th:text="${order.getTotalSum()}" style="width: 50px;"></td>
-                <td><form th:action="@{'/admin/order/delete'}" method="get">
-                    <input type="hidden" th:value="${order.getId()}" name="orderId">
-                    <button class="btn cart" id="delete" type="submit">Delete</button>
-                </form></td>
-            </tr>
-            </tbody>
-        </table>
     </div>
+<!--    <div>-->
+<!--        <table id="myTable" class="table table-bordered" style="width:100%">-->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--                <th>id</th>-->
+<!--                <th>user</th>-->
+<!--                <th>Order address</th>-->
+<!--                <th>Order status</th>-->
+<!--                <th>Sum</th>-->
+<!--                <th>Edit</th>-->
+
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--            <tr th:each="order : ${orders}">-->
+<!--                <td th:text="${order.id}" style="width: 20px;"></td>-->
+<!--                <td th:text="${order.user.getId()}"></td>-->
+<!--                <td th:text="${order.userAddress}"></td>-->
+<!--                <td th:text="${order.orderStatus.getDisplayValue()}"></td>-->
+<!--                <td th:text="${order.getTotalSum()}" style="width: 50px;"></td>-->
+<!--                <td ><a th:text="Edit" th:href="@{'/admin/order/'+ ${order.id}}"></a></td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--    </div>-->
 </div>
 
 <script>

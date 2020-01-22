@@ -8,17 +8,13 @@ import com.example.sfff.repos.OrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/order")
 public class OrderController {
 
     @Autowired
@@ -33,16 +29,19 @@ public class OrderController {
     @Autowired
     OrderProductRepo orderProductRepo;
 
-    @GetMapping
+    @GetMapping("/order")
     public String order(@AuthenticationPrincipal User user,Map<String, Object> model){
         List<Order> orders = orderRepo.findByUserId(user.getId());
         System.out.println(orders);
         model.put("orders",orders);
         model.put("user",user);
+        model.put("categories",Category.values());
         return "order";
     }
 
-    @PostMapping
+
+
+    @PostMapping("/order")
     @Transactional
     public String checkout(
             @AuthenticationPrincipal User user,
@@ -69,7 +68,7 @@ public class OrderController {
         for (CartProduct product: products){
             OrderProduct addProductToOrder = new OrderProduct();
             addProductToOrder.setOrder(order);
-            addProductToOrder.setQuantity(product.getNumbers());
+            addProductToOrder.setQuantity(product.getQuantity());
             addProductToOrder.setProduct(product.getProduct());
             orderProductRepo.save(addProductToOrder);
         }

@@ -45,6 +45,7 @@
             <th>Name</th>
             <th>Role</th>
             <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -55,6 +56,7 @@
                 <p th:text="${role}"></p>
             </td>
             <td ><a th:text="Edit" th:href="@{'/admin/user/'+ ${user.id}}">edit</a></td>
+            <td ><a th:text="Delete" th:href="@{'/admin/user/delete/'+ ${user.id}}">delete</a></td>
         </tr>
         </tbody>
     </table>

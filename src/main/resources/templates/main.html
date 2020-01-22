@@ -73,7 +73,7 @@
             </li>
 
             <li th:each="categoryOpt : ${categories}">
-                <a class="menu nav-link" th:href="@{/category(c=${categoryOpt.displayValue})}" th:text="${categoryOpt.displayValue}"></a>
+                <a class="menu nav-link" th:href="@{/category(category=${categoryOpt.ordinal()})}" th:text="${categoryOpt.displayValue}"></a>
             </li>
         </ul>
     </div>
@@ -91,7 +91,8 @@
                         <h5 class="card-price" th:text="${product.price} + ' sek'"></h5>
                         <!--                   <button class="btn cart" data-toggle="modal" data-target="#exampleModalCenter">Add to basket</button>-->
                         <form th:action="@{/}" method="post">
-                            <input type="hidden" th:value="${product.id}" th:name="id"/>
+                            <input style="width: 50px;" type="number" pattern="^[ 0-9]+$" th:id="quantity" th:name="quantity" th:value="1" />
+                            <input type="hidden" th:value="${product.id}" name="productId"/>
                             <button class="btn cart">Add to basket</button>
                         </form>
 

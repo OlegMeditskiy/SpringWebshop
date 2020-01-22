@@ -1,30 +1,25 @@
 package com.example.sfff.controller;
 
-import com.example.sfff.domain.CartProduct;
 import com.example.sfff.domain.Category;
 import com.example.sfff.domain.Product;
-import com.example.sfff.domain.User;
 import com.example.sfff.repos.ProductRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.UUID;
 
 @Controller
 @RequestMapping("/admin/product")
 @PreAuthorize("hasAuthority('ADMIN')")
-public class ProductController {
+public class AdminProductController {
     @Autowired
     private ProductRepo productRepo;
 
@@ -37,8 +32,8 @@ public class ProductController {
         Iterable<Product> products = productRepo.findAll();
 
         model.put("products", products);
-
-        return "product";
+        model.put("categories",Category.values());
+        return "productList";
     }
     @GetMapping("/delete")
     public String delete(
@@ -52,7 +47,7 @@ public class ProductController {
 
     @PostMapping
     public String add(
-            @RequestParam String category,
+            @RequestParam Category category,
             @RequestParam String title,
             @RequestParam String description,
             @RequestParam int price,
@@ -81,17 +76,10 @@ public class ProductController {
 
         model.put("products", products);
 
-        return "product";
+        return "productList";
     }
 
-    @GetMapping("/{cartProductId}")
-    public String delete(
-            @PathVariable Long cartProductId
-    ){
 
-
-        return "redirect:/admin/product";
-    }
 
 
 }

@@ -40,7 +40,7 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     Set<OrderProduct> orderProducts;
 
     public Set<OrderProduct> getOrderProducts() {
@@ -84,5 +84,14 @@ public class Order {
             summ+=product.getQuantity()*product.getProduct().getPrice();
         }
         return summ;
+    }
+    public List<OrderStatus> getCategoryExcept(OrderStatus orderStatus){
+        List<OrderStatus> orderStatuses = new ArrayList<>();
+        for (OrderStatus orderStatus1: OrderStatus.values()){
+            if(!orderStatus1.equals(orderStatus)){
+                orderStatuses.add(orderStatus1);
+            }
+        }
+        return orderStatuses;
     }
 }

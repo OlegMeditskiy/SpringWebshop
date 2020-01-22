@@ -30,7 +30,7 @@ public class CartController {
         if (!products.isEmpty()){
 
             for (CartProduct product: products){
-                sum += product.getProduct().getPrice()*product.getNumbers();
+                sum += product.getProduct().getPrice()*product.getQuantity();
             }
 
             model.put("sum",sum);
@@ -51,9 +51,9 @@ public class CartController {
     ){
         Optional<CartProduct> cartProduct = cartProductRepo.findById(cartProductId);
         CartProduct cp = cartProduct.get();
-        if (cp.getNumbers()>1)
+        if (cp.getQuantity()>1)
         {
-            cp.setNumbers(cp.getNumbers()-1);
+            cp.setQuantity(cp.getQuantity()-1);
             cartProductRepo.save(cp);
         }
         else{
@@ -68,7 +68,7 @@ public class CartController {
     ){
         Optional<CartProduct> cartProduct = cartProductRepo.findById(cartProductId);
         CartProduct cp = cartProduct.get();
-        cp.setNumbers(cp.getNumbers()+1);
+        cp.setQuantity(cp.getQuantity()+1);
         cartProductRepo.save(cp);
 
         return "redirect:/cart";

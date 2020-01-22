@@ -2,28 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="555cf6d9-8390-4431-b7f3-715d77a2f4cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/sfff/LoginTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/sfff/MainControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application-test.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/create-productList-after.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/create-productList-before.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/create-user-after.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/create-user-before.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/29ccecbc-f624-41b5-9cdf-563f73a95b50.test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/2d08ed12-5349-42c6-906d-812a2198c9c0.test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/4da0921a-e691-4416-a648-439c03fb4ce4.test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/4e44aa24-6edf-4dbf-b8a3-25ad52d6493c.bc2c48b4-b1cd-486b-91e1-4dfa2d37672e.Kokos milk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/6c8fcad5-e21c-4a83-a531-029191027513.cdc83833-39b7-451b-a624-3ecaeefd3cf7.Kokos milk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/79e36a69-9f4d-4695-8c10-94a77ea51e3d.test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/8aec3e30-497c-4643-a2c6-7c3f6e05fdb4.test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/d070f649-94b7-410a-8632-3f4d5ee6d74b.test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/e723abef-9049-4d56-8508-bc7910be15b0.test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/f05dbbb4-678e-4166-bd64-74a4cc57b735.test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/f1dff032-14f5-4db8-8010-14da723a4e86.test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/fb23dcd2-857f-488c-bf98-d86f6500d0ef.test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/products/test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/orderEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/sfff/AdminProductControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/sfff/CartControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/sfff/OrderControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/sfff/RegistrationControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/AdminOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/AdminOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/CartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/AdminProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/CartProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/CartProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/CartProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/CartProductRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/CartRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/CartRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/ProductRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sfff/repos/UserRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/orderList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/productList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userEdit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/sfff/MainControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/sfff/MainControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/create-productList-after.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/create-productList-after.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/create-productList-before.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/create-productList-before.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/AdminOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/AdminOrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/CartController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/CartProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/CartProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/domain/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/CartProductRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/CartProductRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/CartRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/CartRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/ProductRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/ProductRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/UserRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sfff/repos/UserRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/orderList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userEdit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/sfff/MainControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/sfff/MainControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/create-productList-after.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/create-productList-after.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/create-productList-before.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/create-productList-before.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +101,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -100,15 +149,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\olegm\IdeaProjects\sfff\src\test\resources" />
-      <recent name="C:\Users\olegm\IdeaProjects\sfff\src\main\java\com\example\sweater" />
-      <recent name="C:\Users\olegm\IdeaProjects\sfff\src\main\resources\templates" />
-      <recent name="C:\Users\olegm\IdeaProjects\sfff\src\main\resources\static\css" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\olegm\IdeaProjects\sfff\src\main\resources\static\images\products" />
       <recent name="C:\Users\olegm\IdeaProjects\sfff\src\main\resources\static\css" />
@@ -116,19 +156,28 @@
       <recent name="C:\Users\olegm\IdeaProjects\sfff\src\main\resources\static" />
       <recent name="C:\Users\olegm\IdeaProjects\sfff\src\main\resources\templates" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\olegm\IdeaProjects\sfff\src\test\resources" />
+      <recent name="C:\Users\olegm\IdeaProjects\sfff\src\main\java\com\example\sweater" />
+      <recent name="C:\Users\olegm\IdeaProjects\sfff\src\main\resources\templates" />
+      <recent name="C:\Users\olegm\IdeaProjects\sfff\src\main\resources\static\css" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainControllerTest">
-    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.ServingWebContentApplication">
+    <configuration name="CartControllerTest and 5 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sfff" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.sfff.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.sfff" />
-      <option name="MAIN_CLASS_NAME" value="com.example.sfff.LoginTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="com.example.sfff.CartControllerTest" />
+        <pattern testClass="com.example.sfff.LoginTest" />
+        <pattern testClass="com.example.sfff.MainControllerTest" />
+        <pattern testClass="com.example.sfff.OrderControllerTest" />
+        <pattern testClass="com.example.sfff.AdminProductControllerTest" />
+        <pattern testClass="com.example.sfff.RegistrationControllerTest" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,6 +213,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainControllerTest.categoryPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sfff" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.sfff.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.sfff" />
+      <option name="MAIN_CLASS_NAME" value="com.example.sfff.MainControllerTest" />
+      <option name="METHOD_NAME" value="categoryPageTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServingWebContentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="sfff" />
       <extension name="coverage">
@@ -179,10 +244,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MainControllerTest" />
         <item itemvalue="Spring Boot.ServingWebContentApplication" />
+        <item itemvalue="JUnit.CartControllerTest and 5 more" />
+        <item itemvalue="JUnit.MainControllerTest" />
         <item itemvalue="JUnit.MainControllerTest.addProductToCart" />
-        <item itemvalue="JUnit.LoginTest" />
+        <item itemvalue="JUnit.MainControllerTest.categoryPageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -226,6 +292,8 @@
       <workItem from="1579542856995" duration="14000" />
       <workItem from="1579542888728" duration="16481000" />
       <workItem from="1579564028649" duration="4545000" />
+      <workItem from="1579627071748" duration="6937000" />
+      <workItem from="1579688144804" duration="36220000" />
     </task>
     <servers />
   </component>
@@ -248,22 +316,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="93" y="100" width="774" height="847" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579556366280" />
-    <state x="765" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1579353250934">
+    <state x="765" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1579721351365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1579353250934" />
+    <state x="765" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1579721351365" />
     <state x="179" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1579542867804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="179" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579542867804" />
-    <state x="756" y="380" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1579026075656">
+    <state x="756" y="380" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1579713485293">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="756" y="380" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1579026075656" />
-    <state x="280" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577437340897">
+    <state x="756" y="380" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1579713485293" />
+    <state x="280" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579731787526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="280" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577437340897" />
+    <state x="280" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579731787526" />
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579025402695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -272,63 +340,67 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="957" y="178" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1577525290051" />
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1579568463473">
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1579734660850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579568463473" />
-    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1579568463473">
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579734660850" />
+    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1579734660850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579568463473" />
-    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1579568463473">
+    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579734660850" />
+    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1579734660850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579568463473" />
-    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1579568463473">
+    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579734660850" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1579734660850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579568463473" />
-    <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1579565516634">
+    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579734660850" />
+    <state width="1877" height="274" key="GridCell.Tab.1.bottom" timestamp="1579734660850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579565516634" />
-    <state width="1877" height="344" key="GridCell.Tab.1.center" timestamp="1579565516634">
+    <state width="1877" height="274" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579734660850" />
+    <state width="1877" height="274" key="GridCell.Tab.1.center" timestamp="1579734660850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579565516634" />
-    <state width="1877" height="344" key="GridCell.Tab.1.left" timestamp="1579565516634">
+    <state width="1877" height="274" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579734660850" />
+    <state width="1877" height="274" key="GridCell.Tab.1.left" timestamp="1579734660850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579565516634" />
-    <state width="1877" height="344" key="GridCell.Tab.1.right" timestamp="1579565516634">
+    <state width="1877" height="274" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579734660850" />
+    <state width="1877" height="274" key="GridCell.Tab.1.right" timestamp="1579734660850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579565516634" />
-    <state width="1877" height="344" key="GridCell.Tab.2.bottom" timestamp="1579565429459">
+    <state width="1877" height="274" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579734660850" />
+    <state width="1877" height="344" key="GridCell.Tab.2.bottom" timestamp="1579733853661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579565429459" />
-    <state width="1877" height="344" key="GridCell.Tab.2.center" timestamp="1579565429459">
+    <state width="1877" height="344" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579733853661" />
+    <state width="1877" height="344" key="GridCell.Tab.2.center" timestamp="1579733853660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579565429459" />
-    <state width="1877" height="344" key="GridCell.Tab.2.left" timestamp="1579565429459">
+    <state width="1877" height="344" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579733853660" />
+    <state width="1877" height="344" key="GridCell.Tab.2.left" timestamp="1579733853660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579565429459" />
-    <state width="1877" height="344" key="GridCell.Tab.2.right" timestamp="1579565429459">
+    <state width="1877" height="344" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579733853660" />
+    <state width="1877" height="344" key="GridCell.Tab.2.right" timestamp="1579733853660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579565429459" />
+    <state width="1877" height="344" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579733853660" />
     <state x="794" y="45" key="SettingsEditor" timestamp="1577525685134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1440.856@0.0.1920.1040" timestamp="1577522487029" />
     <state x="794" y="45" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577525685134" />
-    <state x="951" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1579564050889">
+    <state x="951" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1579688739448">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="951" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579564050889" />
+    <state x="951" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579688739448" />
+    <state x="521" y="257" width="877" height="602" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1579708467722">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="521" y="257" width="877" height="602" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1579708467722" />
     <state x="148" y="244" key="run.anything.popup" timestamp="1578045398420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

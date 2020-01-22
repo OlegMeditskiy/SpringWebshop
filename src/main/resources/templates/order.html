@@ -74,8 +74,8 @@
                 <a class="menu nav-link" href="/">All products</a>
             </li>
 
-            <li th:each="categoryOpt : ${T(com.example.sfff.domain.Category).values()}">
-                <a class="menu nav-link" th:href="@{/category(c=${categoryOpt.displayValue})}" th:text="${categoryOpt.displayValue}"></a>
+            <li th:each="categoryOpt : ${categories}">
+                <a class="menu nav-link" th:href="@{/category(category=${categoryOpt.ordinal()})}" th:text="${categoryOpt.displayValue}"></a>
             </li>
         </ul>
     </div>

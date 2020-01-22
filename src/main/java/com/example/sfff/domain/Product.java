@@ -1,9 +1,6 @@
 package com.example.sfff.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Product {
@@ -18,7 +15,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(String category, String title, String description, int price) {
+    public Product(Category category, String title, String description, int price) {
         this.description = description;
         this.title = title;
         this.price = price;
@@ -59,13 +56,14 @@ public class Product {
         this.price = price;
     }
 
-    private String category;
+    @Enumerated(EnumType.ORDINAL)
+    private Category category;
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 

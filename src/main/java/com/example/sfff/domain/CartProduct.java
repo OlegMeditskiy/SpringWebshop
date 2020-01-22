@@ -20,7 +20,7 @@ public class CartProduct {
     public CartProduct() {
     }
 
-    private int numbers=1;
+    private int quantity =1;
 
     public Long getId() {
         return id;
@@ -46,12 +46,12 @@ public class CartProduct {
         this.product = product;
     }
 
-    public int getNumbers() {
-        return numbers;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setNumbers(int numbers) {
-        this.numbers = numbers;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
 }
