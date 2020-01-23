@@ -45,41 +45,35 @@ public class CartController {
         return "cart";
     }
 
-    @GetMapping("/cart/deleteQuantity/{cartProductId}")
+    @GetMapping("/cart/deleteQuantity/{cartProduct}")
     public String deleteQuantity(
-            @RequestParam Long cartProductId
+            @PathVariable CartProduct cartProduct
     ){
-        Optional<CartProduct> cartProduct = cartProductRepo.findById(cartProductId);
-        CartProduct cp = cartProduct.get();
-        if (cp.getQuantity()>1)
+        if (cartProduct.getQuantity()>1)
         {
-            cp.setQuantity(cp.getQuantity()-1);
-            cartProductRepo.save(cp);
+            cartProduct.setQuantity(cartProduct.getQuantity()-1);
+            cartProductRepo.save(cartProduct);
         }
         else{
-            cartProductRepo.delete(cp);
+            cartProductRepo.delete(cartProduct);
         }
 
         return "redirect:/cart";
     }
-    @GetMapping("/cart/addQuantity/{cartProductId}")
+    @GetMapping("/cart/addQuantity/{cartProduct}")
     public String addQuantity(
-            @PathVariable Long cartProductId
+            @PathVariable CartProduct cartProduct
     ){
-        Optional<CartProduct> cartProduct = cartProductRepo.findById(cartProductId);
-        CartProduct cp = cartProduct.get();
-        cp.setQuantity(cp.getQuantity()+1);
-        cartProductRepo.save(cp);
+        cartProduct.setQuantity(cartProduct.getQuantity()+1);
+        cartProductRepo.save(cartProduct);
 
         return "redirect:/cart";
     }
-    @GetMapping("/cart/delete/{cartProductId}")
+    @GetMapping("/cart/delete/{cartProduct}")
     public String delete(
-            @PathVariable Long cartProductId
+            @PathVariable CartProduct cartProduct
     ){
-        Optional<CartProduct> cartProduct = cartProductRepo.findById(cartProductId);
-        CartProduct cp = cartProduct.get();
-        cartProductRepo.delete(cp);
+        cartProductRepo.delete(cartProduct);
         return "redirect:/cart";
 
     }

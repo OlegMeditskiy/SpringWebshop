@@ -86,7 +86,7 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Price</th>
-                    <th>Delete</th>
+                    <th>Edit</th>
 
                 </tr>
                 </thead>
@@ -99,7 +99,7 @@
                         <td th:text="${product.price}" style="width: 50px;"></td>
                         <td><form th:action="@{'/admin/product/delete'}" method="get">
                             <input type="hidden" th:value="${product.getId()}" name="productId">
-                            <button class="btn cart" id="delete" type="submit">Delete</button>
+                                  <a th:text="Edit" th:href="@{'/admin/product/'+ ${product.id}}"></a>
                         </form></td>
                     </tr>
                 </tbody>

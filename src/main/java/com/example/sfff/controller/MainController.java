@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -58,16 +59,22 @@ public class MainController {
 
     @GetMapping("search")
     public String search(@AuthenticationPrincipal User user,@RequestParam String search, Map<String, Object> model) {
-        Iterable<Product> products;
+        List<Product> products=new ArrayList<>();
+        List<Product> productsByTitle=new ArrayList<>();
+        List<Product> productsByDescription=new ArrayList<>();
 
         if (search != null && !search.isEmpty()) {
-            products = productRepo.findByTitleContaining(search);
+            productsByTitle = productRepo.findByTitleContaining(search);
+            productsByDescription = productRepo.findByDescriptionContaining(search);
+            products.addAll(productsByTitle);
+            products.addAll(productsByDescription);
         } else {
             products = productRepo.findAll();
         }
 
         model.put("products", products);
         model.put("user",user);
+        model.put("whatIsIt","Search results");
         model.put("categories",Category.values());
         return "main";
     }
@@ -76,14 +83,15 @@ public class MainController {
     @PostMapping
     public String addToCart(
             @AuthenticationPrincipal User user,
-            @RequestParam int productId,
+            @RequestParam Product product,
             @RequestParam int quantity){
         Cart cart = cartRepo.findByUserId(user.getId());
-        Product product = productRepo.findById(productId);
         List<CartProduct> cartProducts = cartProductRepo.findByCartId(cart.getId());
-            CartProduct cartProduct = getCartProduct(cartProducts,productId);
+            CartProduct cartProduct = getCartProduct(cartProducts,product.getId());
             if(cartProduct!=null){
-                addQuantityToProductInCart(cartProduct,quantity);
+
+                    addQuantityToProductInCart(cartProduct,quantity);
+
             }
             else {
                 addProductToCart(product,cart,quantity);
@@ -102,11 +110,14 @@ public class MainController {
     }
 
     public void addQuantityToProductInCart(CartProduct cartProduct, int quantity){
-        cartProduct.setQuantity(cartProduct.getQuantity()+quantity);
-        cartProductRepo.save(cartProduct);
+        if (cartProduct.getQuantity()-quantity>1){
+            cartProduct.setQuantity(cartProduct.getQuantity()+quantity);
+            cartProductRepo.save(cartProduct);
+        }
+
     }
 
-    public CartProduct getCartProduct(List<CartProduct> cartProducts, int id) {
+    public CartProduct getCartProduct(List<CartProduct> cartProducts, Long id) {
         CartProduct cartProduct = null;
         for (CartProduct cartProduct1 : cartProducts) {
             if (cartProduct1.getProduct().getId() == id) {

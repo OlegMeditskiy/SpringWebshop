@@ -65,17 +65,17 @@ public class CartControllerTest {
     @Sql(value = {"/create-productList-after.sql","/create-user-after.sql"},executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
     public void deleteQuantityTest(){
         User u = userRepo.findByUsername("u");
+        Product product = productRepo.findById((long)1).get();
+        mainController.addToCart(u,product,2);
 
-        mainController.addToCart(u,1,2);
-
-
-        mainController.addToCart(u,2,4);
+        product = productRepo.findById((long)2).get();
+        mainController.addToCart(u,product,4);
 
 
         List <CartProduct> cartProducts = cartProductRepo.findAll();
-        cartController.deleteQuantity(cartProducts.get(0).getId());
-        cartController.deleteQuantity(cartProducts.get(1).getId());
-        cartController.deleteQuantity(cartProducts.get(1).getId());
+        cartController.deleteQuantity(cartProducts.get(0));
+        cartController.deleteQuantity(cartProducts.get(1));
+        cartController.deleteQuantity(cartProducts.get(1));
 
         List <CartProduct> cartProductsNew = cartProductRepo.findAll();
 
@@ -88,17 +88,17 @@ public class CartControllerTest {
     public void addQuantityTest(){
         User u = userRepo.findByUsername("u");
 
+       Product product = productRepo.findById((long)1).get();
+        mainController.addToCart(u,product,2);
 
-        mainController.addToCart(u,1,2);
-
-
-        mainController.addToCart(u,2,4);
+        product = productRepo.findById((long)2).get();
+        mainController.addToCart(u,product,4);
 
 
         List <CartProduct> cartProducts = cartProductRepo.findAll();
-        cartController.addQuantity(cartProducts.get(0).getId());
-        cartController.addQuantity(cartProducts.get(1).getId());
-        cartController.addQuantity(cartProducts.get(1).getId());
+        cartController.addQuantity(cartProducts.get(0));
+        cartController.addQuantity(cartProducts.get(1));
+        cartController.addQuantity(cartProducts.get(1));
 
         List <CartProduct> cartProductsNew = cartProductRepo.findAll();
 
@@ -110,16 +110,17 @@ public class CartControllerTest {
     @Sql(value = {"/create-productList-after.sql","/create-user-after.sql"},executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
     public void deleteTest(){
         User u = userRepo.findByUsername("u");
-        Product product = productRepo.findById(1);
+//        Product product = productRepo.findById(1);
 
-        mainController.addToCart(u,1,2);
+        Product product = productRepo.findById((long)1).get();
+        mainController.addToCart(u,product,2);
 
-
-        mainController.addToCart(u,2,4);
+        product = productRepo.findById((long)2).get();
+        mainController.addToCart(u,product,4);
 
         List <CartProduct> cartProducts = cartProductRepo.findAll();
-        cartController.delete(cartProducts.get(0).getId());
-        cartController.delete(cartProducts.get(1).getId());
+        cartController.delete(cartProducts.get(0));
+        cartController.delete(cartProducts.get(1));
 
         List <CartProduct> cartProductsNew = cartProductRepo.findAll();
         assertThat(cartProductsNew.size()).isEqualTo(0);

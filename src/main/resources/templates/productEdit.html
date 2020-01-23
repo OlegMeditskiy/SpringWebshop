@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -24,24 +25,54 @@
     <title>Vegan life</title>
 </head>
 <body>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/admin">Admin panel</a></li>
+        <li class="breadcrumb-item"><a href="/admin/user">Users</a></li>
+        <li class="breadcrumb-item"><a href="/admin/product">Products</a></li>
+    </ol>
+</nav>
 <div class="main-content">
-    User editor
+    Product editor
 
-    <form action="/product" method="post">
-        <input type="text" name="title" value="${product.title}">
-        <input type="text" name="title" value="${product.description}">
-        <input type="hidden" value="${product.id}" name="userId">
-        <button type="submit">Save</button>
-    </form>
+    <form method="post" th:action="@{/admin/product/{path}(path=${product.id})}" th:method="post" enctype="multipart/form-data">
 
-</div>
+            <label for="product">Product id</label>
+            <div class="form-control" th:text="${product.id}" th:value="${product.id}" id="product" name="product"></div>
 
-    <footer>
-        <div class="f">
-            Copyright - Vegan Life - 2019
+        <div class="form-group">
+            <label for="category">Category</label>
+
+            <select name="category" class="form-control" id="category">
+                <option th:each="categoryOpt : ${categories}"
+                        th:value="${categoryOpt}" th:text="${categoryOpt.displayValue}"></option>
+            </select>
         </div>
 
-    </footer>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" th:value="${product.title}" id="title" name="title" placeholder="Enter title" />
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" th:value="${product.description}" id="description" name="description" placeholder="Enter Description">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" th:value="${product.price}" pattern="^[ 0-9]+$" id="price" title="Numbers" name="price" placeholder="Enter price" />
+        </div>
+
+        <button class="btn cart" type="submit" >Save</button>
+    </form>
+</div>
+
+<footer>
+    <div class="f">
+        Copyright - Vegan Life - 2019
+    </div>
+
+</footer>
 
 
 </body>

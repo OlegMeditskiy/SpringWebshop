@@ -74,12 +74,14 @@ public class OrderControllerTest {
     @Test
     public void checkoutTest() throws Exception{
         User user = userRepo.findByUsername("u");
+        Product product = productRepo.findById((long)1).get();
+        mainController.addToCart(user,product,1);
 
-        mainController.addToCart(user,1,1);
+        product = productRepo.findById((long)2).get();
+        mainController.addToCart(user,product,1);
 
-        mainController.addToCart(user,2,1);
-
-        mainController.addToCart(user,3,1);
+        product = productRepo.findById((long)3).get();
+        mainController.addToCart(user,product,1);
 
         String address = "kvistbrogatan 22";
         orderController.checkout(user,address);

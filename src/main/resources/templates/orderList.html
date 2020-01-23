@@ -44,6 +44,14 @@
                 <div th:text="${order.getId()}"></div>
             </div>
             <div class="col" align="center">
+                <div class="columnName" th:text="USER" ></div>
+                <div th:text="${order.getUser().getId()}"></div>
+            </div>
+            <div class="col" align="center">
+                <div class="columnName" th:text="ADDRESS" ></div>
+                <div th:text="${order.getUserAddress()}"></div>
+            </div>
+            <div class="col" align="center">
                 <div class="columnName" th:text="STATUS"></div>
                 <div th:text="${order.getOrderStatus().getDisplayValue()}"></div>
             </div>

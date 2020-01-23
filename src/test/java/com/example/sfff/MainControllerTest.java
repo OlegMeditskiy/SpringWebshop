@@ -100,8 +100,8 @@ public class MainControllerTest {
     @Test
     public void addProductToCart() throws Exception {
         User u = userRepo.findByUsername("u");
-        Product product = productRepo.findById(1);
-        mainController.addToCart(u,1,2);
+        Product product = productRepo.findById((long)1).get();
+        mainController.addToCart(u,product,2);
 
         List<CartProduct> products = cartProductRepo.findByCartId((long) 1);
         System.out.println(products);

@@ -1,20 +1,24 @@
 package com.example.sfff.controller;
 
-import com.example.sfff.domain.Category;
-import com.example.sfff.domain.Product;
+import com.example.sfff.domain.*;
 import com.example.sfff.repos.ProductRepo;
 
+import org.junit.experimental.categories.Categories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/admin/product")
@@ -35,12 +39,28 @@ public class AdminProductController {
         model.put("categories",Category.values());
         return "productList";
     }
-    @GetMapping("/delete")
-    public String delete(
-            @RequestParam int productId
-    ){
-        Product product = productRepo.findById(productId);
-        productRepo.delete(product);
+
+    @GetMapping("{product}")
+    public String productEditForm( @PathVariable Product product, Model model){
+        model.addAttribute("product", product);
+        model.addAttribute("categories", Category.values());
+       return "productEdit";
+    }
+
+    @PostMapping("{product}")
+    public String productSave(
+            @RequestParam Category category,
+            @RequestParam String title,
+            @RequestParam String description,
+            @RequestParam int price,
+            @PathVariable Product product
+    ) {
+        product.setCategory(category);
+        product.setTitle(title);
+        product.setDescription(description);
+        product.setPrice(price);
+        productRepo.save(product);
+
         return "redirect:/admin/product";
     }
 
@@ -76,7 +96,7 @@ public class AdminProductController {
 
         model.put("products", products);
 
-        return "productList";
+        return "redirect:/admin/product";
     }
 
 
